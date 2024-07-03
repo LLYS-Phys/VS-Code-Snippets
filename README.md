@@ -1,7 +1,7 @@
 # VS-Code-Snippets
 Code Snippets for VS Code.
 
-Current include snippets for:
+Currently include code snippets for:
   1. Elixir (elixir.json)
   2. Phoenix LiveView HEEx (phoenix-heex.json)
 
