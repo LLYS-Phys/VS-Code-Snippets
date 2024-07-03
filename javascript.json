@@ -1,0 +1,165 @@
+{
+	"hook-js": {
+		"prefix": "hook-js",
+		"body": [
+			"function ${TM_FILENAME_BASE/(.*)/${1:/snakecase}/g}_func(prop){",
+			"    console.log(prop.el)",
+			"}",
+			"",
+			"export const ${TM_FILENAME_BASE/(.*)/${1:/snakecase}/g} = {",
+			"    mounted() {",
+			"        ${TM_FILENAME_BASE/(.*)/${1:/snakecase}/g}_func(this)",
+			"    }",
+			"}"
+		],
+		"description": "Creating a JS hook"
+	},
+	"click-listener": {
+		"prefix": ["click-event-listener-js", "click-listener", "event-listener"],
+		"body": [
+			"${1:prop.el}.addEventListener(\"click\", () => {",
+			"    $0",
+			"})"
+		],
+		"description": "Shortcut for creating JS click event listener"
+	},
+	"change-listener": {
+		"prefix": ["change-event-listener-js", "change-listener", "event-listener"],
+		"body": [
+			"${1:prop.el}.addEventListener(\"change\", () => {",
+			"    $0",
+			"})"
+		],
+		"description": "Shortcut for creating JS change event listener"
+	},
+	"mouseover-listener": {
+		"prefix": ["mouseover-event-listener-js", "mouseover-listener", "event-listener"],
+		"body": [
+			"${1:prop.el}.addEventListener(\"mouseover\", () => {",
+			"    $0",
+			"})"
+		],
+		"description": "Shortcut for creating JS mouseover event listener"
+	},
+	"mouseout-listener": {
+		"prefix": ["mouseout-event-listener-js", "mouseout-listener", "event-listener"],
+		"body": [
+			"${1:prop.el}.addEventListener(\"mouseout\", () => {",
+			"    $0",
+			"})"
+		],
+		"description": "Shortcut for creating JS mouseout event listener"
+	},
+	"keydown-listener": {
+		"prefix": ["keydown-event-listener-js", "keydown-listener", "event-listener"],
+		"body": [
+			"${1:prop.el}.addEventListener(\"keydown\", () => {",
+			"    $0",
+			"})"
+		],
+		"description": "Shortcut for creating JS keydown event listener"
+	},
+	"load-listener": {
+		"prefix": ["load-event-listener-js", "load-listener", "event-listener"],
+		"body": [
+			"${1:prop.el}.addEventListener(\"load\", () => {",
+			"    $0",
+			"})"
+		],
+		"description": "Shortcut for creating JS load event listener"
+	},
+	"ternary-js": {
+		"prefix": ["ternary-js", "one-line-if", "if-one-line"],
+		"body": "${1:condition} ? ${2:true} : ${3:false}",
+		"description": "JS ternary expression"
+	},
+	"if-single-line-js": {
+		"prefix": "if-single-line-js",
+		"body": "if (${1:condition}) ${action}",
+		"description": "One line if expression"
+	},
+	"if-multi-line-js": {
+		"prefix": "if-multi-line-js",
+		"body": [
+			"if (${1:condition}){",
+			"    $0",
+			"}"
+		],
+		"description": "Multi line if expression"
+	},
+	"if-else-js": {
+		"prefix": "if-else-js",
+		"body": [
+			"if (${1:condition}){",
+			"    $0",
+			"}",
+			"else {",
+			"    ",
+			"}"
+		],
+		"description": "If-else JS expression"
+	},
+	"switch-js": {
+		"prefix": "switch-js",
+		"body": [
+			"switch(${1:expression}) {",
+			"    case ${2:case1} :",
+			"        ${3:action1};",
+			"        break;",
+			"    case ${4:case2} :",
+			"        ${5:action2};",
+			"        break;",
+			"    default:",
+			"        ${6:default_action};",
+			"}"
+		],
+		"description": "Switch JS statement"
+	},
+	"for-js": {
+		"prefix": "for-loop-js",
+		"body": [
+			"for (let ${1:i} = 0; ${1:i} < ${2:max_value}; ${1:i}++) {",
+			"    console.log(${1:i})",
+			"}"
+		],
+		"description": "JS For Loop"
+	},
+	"for-in-js": {
+		"prefix": "for-in-loop-js",
+		"body": [
+			"for (${1:variable} in ${2:array}) {",
+			"    ",
+			"}"
+		],
+		"description": "JS For-in Loop"
+	},
+	"for-of-js": {
+		"prefix": "for-of-loop-js",
+		"body": [
+			"for (${1:variable} of ${2:iterable}) {",
+			"    ",
+			"}"
+		],
+		"description": "JS For-of Loop"
+	},
+	"while-js": {
+		"prefix": "while-loop-js",
+		"body": [
+			"while (${1:i}<10) {",
+			"    ",
+			"    ${1:i}++",
+			"}"
+		],
+		"description": "JS While Loop"
+	},
+	"destructuring-js": {
+		"prefix": ["destructuring-js", "destructure"],
+		"body": "let {${1:object_property1}, ${2:object_property2}} = ${3:object}",
+		"description": "Destructuing in JS"
+	},
+	"arrow-function-js": {
+		"prefix": "arrow-function-js",
+		"body": "const ${1:name} = () => console.log(\"result\")",
+		"description": "JS arrow function"
+	}
+}
