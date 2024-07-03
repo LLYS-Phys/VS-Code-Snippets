@@ -1,0 +1,174 @@
+{
+	"link-navigate": {
+		"prefix": ["link-navigate-heex", "navigate-link"],
+		"body": "<.link navigate={~p\"/\"}></.link>",
+		"description": "calling the <.link> core component with navigate attribute" 
+	},
+	"link-patch": {
+		"prefix": ["link-patch-heex", "patch-link"],
+		"body": "<.link patch={~p\"/\"}></.link>",
+		"description": "calling the <.link> core component with patch attribute" 
+	},
+	"pipe-heex": {
+		"prefix": "pipe-heex",
+		"body": "<%= $0 %>",
+		"description": "Operator to pipe elixir code in heex"
+	},
+	"if-heex": {
+		"prefix": "if-heex",
+		"body": [
+			"<%= if ${1:condition} do %>",
+			"    $0",
+			"<% end %>"
+		],
+		"description": "Elixir if statement in heex"
+	},
+	"ifelse-heex": {
+		"prefix": "if-else-heex",
+		"body": [
+			"<%= if ${1:condition} do %>",
+			"    ",
+			"<% else %>",
+			"    ",
+			"<% end %>"
+		],
+		"description": "Elixir if-else statement in heex"
+	},
+	"unless-heex": {
+		"prefix": "unless-heex",
+		"body": [
+			"<%= unless ${1:condition} do %>",
+			"    $0",
+			"<% end %>"
+		],
+		"description": "Elixir unless statement in heex"
+	},
+	"for_loop-heex": {
+		"prefix": "for-heex",
+		"body": [
+		  "<%= for ${1:item} <- @${2:list} do %>",
+		  "  $0 ",
+		  "<% end %>"
+		],
+		"description": "Elixir for loop"
+	},
+	"live-component": {
+		"prefix": "live-component-heex",
+		"body": "<.live_component module={${1:name}} id={${2:id}} />",
+		"description": "Calling a live component"
+	},
+	"div-for-heex": {
+		"prefix": ["for-div-heex", "div-for"],
+		"body": [
+		  "<div :for={${1:item} <- @${2:list}}>",
+		  "  $0 ",
+		  "</div>"
+		],
+		"description": "Elixir for loop with div elements"
+	},
+	"p-for-heex": {
+		"prefix": ["for-p-heex", "p-for"],
+		"body": [
+		  "<p :for={${1:item} <- @${2:list}}>",
+		  "  $0 ",
+		  "</p>"
+		],
+		"description": "Elixir for loop with p elements"
+	},
+	"li-for-heex": {
+		"prefix": ["for-li-heex", "li-for"],
+		"body": [
+		  "<li :for={${1:item} <- @${2:list}}>",
+		  "  $0 ",
+		  "</li>"
+		],
+		"description": "Elixir for loop with li elements"
+	},
+	"h2-for-heex": {
+		"prefix": ["for-h2-heex", "h2-for"],
+		"body": [
+		  "<h2 :for={${1:item} <- @${2:list}}>",
+		  "  $0 ",
+		  "</h2>"
+		],
+		"description": "Elixir for loop with h2 elements"
+	},
+	"h3-for-heex": {
+		"prefix": ["for-h3-heex", "h3-for"],
+		"body": [
+		  "<h3 :for={${1:item} <- @${2:list}}>",
+		  "  $0 ",
+		  "</h3>"
+		],
+		"description": "Elixir for loop with h3 elements"
+	},
+	"h4-for-heex": {
+		"prefix": ["for-h4-heex", "h4-for"],
+		"body": [
+		  "<h4 :for={${1:item} <- @${2:list}}>",
+		  "  $0 ",
+		  "</h4>"
+		],
+		"description": "Elixir for loop with h4 elements"
+	},
+	"h5-for-heex": {
+		"prefix": ["for-h5-heex", "h5-for"],
+		"body": [
+		  "<h5 :for={${1:item} <- @${2:list}}>",
+		  "  $0 ",
+		  "</h5>"
+		],
+		"description": "Elixir for loop with h5 elements"
+	},
+	"h6-for-heex": {
+		"prefix": ["for-h6-heex", "h6-for"],
+		"body": [
+		  "<h6 :for={${1:item} <- @${2:list}}>",
+		  "  $0 ",
+		  "</h6>"
+		],
+		"description": "Elixir for loop with h6 elements"
+	},
+	"span-for-heex": {
+		"prefix": ["for-span-heex", "span-for"],
+		"body": [
+		  "<span :for={${1:item} <- @${2:list}}>",
+		  "  $0 ",
+		  "</span>"
+		],
+		"description": "Elixir for loop with span elements"
+	},
+	"div-if-heex": {
+		"prefix": ["if-div-heex", "div-if"],
+		"body": [
+		  "<div :if={${1:condition}}>",
+		  "  $0 ",
+		  "</div>"
+		],
+		"description": "Elixir if with a div element"
+	},
+	"div-unless-heex": {
+		"prefix": ["unless-div-heex", "div-unless"],
+		"body": [
+		  "<div :unless={${1:condition}}>",
+		  "  $0 ",
+		  "</div>"
+		],
+		"description": "Elixir unless with a div element"
+	},
+	"js-hook-heex": {
+		"prefix": ["js-hook-heex", "hook-js"],
+		"body": "phx-hook=\"${1:hookName}\"",
+		"description": "Add JS hook"
+	},
+	"inner-content": {
+		"prefix": "inner-content",
+		"body": "<%= @inner_content %>",
+		"description": "Adds the @inner_content pipe"
+	},
+	"render-slot": {
+		"prefix": "render-slot",
+		"body": "<%= render_slot(${1:@inner_block}) %>",
+		"description": "Adds pipe with the render_slot function"
+	}
+}
