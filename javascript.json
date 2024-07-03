@@ -14,6 +14,17 @@
 		],
 		"description": "Creating a JS hook"
 	},
+	"hook-js-1": {
+		"prefix": "hook-js1",
+		"body": [
+			"Hooks.${1:HookName} = {",
+			"    mounted() {",
+			"        console.log(\"hook\")",
+			"    }",
+			"}"
+		],
+		"description": "Creating a JS hook with default export"
+	},
 	"click-listener": {
 		"prefix": ["click-event-listener-js", "click-listener", "event-listener"],
 		"body": [
