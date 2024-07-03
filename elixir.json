@@ -1,0 +1,384 @@
+{
+  "lv_module": {
+    "prefix": ["liveview", "lv"],
+    "body": [
+      "defmodule ${WORKSPACE_NAME/(.*)/${1:/pascalcase}/g}Web.${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g} do",
+      "  use ${WORKSPACE_NAME/(.*)/${1:/pascalcase}/g}Web, :live_view",
+      "  $0",
+      "end"
+    ],
+    "description": "LiveView module"
+  },
+  "lc_module": {
+    "prefix": ["live-component", "lc"],
+    "body": [
+      "defmodule ${WORKSPACE_NAME/(.*)/${1:/pascalcase}/g}Web.${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g} do",
+      "  use ${WORKSPACE_NAME/(.*)/${1:/pascalcase}/g}Web, :live_component",
+      "  $0",
+      "end"
+    ],
+    "description": "LiveComponent module"
+  },
+  "lv_mount": {
+    "prefix": "mount",
+    "body": [
+      "def mount(_params, _session, socket) do",
+      "  socket =",
+      "    assign(socket, ${1:key}: ${2:value}",
+      "",
+      "  {:ok, socket}",
+      "end"
+    ],
+    "description": "LiveView mount function"
+  },
+  "lv_render": {
+    "prefix": "render",
+    "body": [
+      "def render(assigns) do",
+      "  ~H\"\"\"",
+      "  ${0}",
+      "  \"\"\"",
+      "end"
+    ],
+    "description": "LiveView render function"
+  },
+  "lv_function_component": {
+    "prefix": ["def", "fc", "function"],
+    "body": [
+      "def ${1:name}(assigns) do",
+      "  ~H\"\"\"",
+      "  ${2}",
+      "  \"\"\"",
+      "end"
+    ],
+    "description": "LiveView function component"
+  },
+  "lv_handle_event": {
+    "prefix": ["handle-event", "he"],
+    "body": [
+      "def handle_event(${1:event}, _, socket) do",
+      "  {:noreply, socket}",
+      "end"
+    ],
+    "description": "LiveView handle_event function"
+  },
+  "lv_handle_event1": {
+    "prefix": ["handle-event1", "he1"],
+    "body": [
+      "def handle_event(${1:event}, _, socket) do",
+      "  socket = assign(socket, ${2:key}: ${3:value})",
+      "  {:noreply, socket}",
+      "end"
+    ],
+    "description": "LiveView handle_event function"
+  },
+  "lv_handle_event2": {
+    "prefix": ["handle-event2", "he2"],
+    "body": [
+      "def handle_event(${1:event}, _, socket) do",
+      "  socket =",
+      "    assign(socket, ${2:key}: ${3:value})",
+      "",
+      "  {:noreply, socket}",
+      "end"
+    ],
+    "description": "LiveView handle_event function"
+  },
+  "lv_handle_info": {
+    "prefix": ["handle-info", "hi"],
+    "body": [
+      "def handle_info(${1:message}, socket) do",
+      "  {:noreply, socket}",
+      "end"
+    ],
+    "description": "LiveView handle_info function"
+  },
+  "lv_handle_info1": {
+    "prefix": ["handleinfo1", "hi1"],
+    "body": [
+      "def handle_info(${1:message}, socket) do",
+      "  socket = assign(socket, ${2:key}: ${3:value})",
+      "  {:noreply, socket}",
+      "end"
+    ],
+    "description": "LiveView handle_info function"
+  },
+  "lv_handle_info2": {
+    "prefix": ["handle-info2", "hi2"],
+    "body": [
+      "def handle_info(${1:message}, socket) do",
+      "  socket =",
+      "    assign(socket, ${2:key}: ${3:value}",
+      "",
+      "  {:noreply, socket}",
+      "end"
+    ],
+    "description": "LiveView handle_info function"
+  },
+  "lv_handle_params": {
+    "prefix": ["handle-params", "hp"],
+    "body": [
+      "def handle_params(${1:params}, _uri, socket) do",
+      "  {:noreply, socket}",
+      "end"
+    ],
+    "description": "LiveView handle_params function"
+  },
+	"lv_heex": {
+		"prefix": "heex",
+		"body": ["~H\"\"\"", "${0}", "\"\"\""],
+    "description": "LiveView HEEx template"
+  },
+  "lv_assign": {
+    "prefix": "assign",
+    "body": ["socket =", "  assign(socket,", "    ${1:key}: ${2:value}", "  )"],
+    "description": "LiveView assign"
+  },
+  "insp": {
+    "prefix": "inspect",
+    "body": "IO.inspect(self(), label: \"${0:label}\")",
+    "description": "Inspect process with a label"
+  },
+  "map": {
+    "prefix": "map",
+    "body": "%{\"${1}\" => ${2}}",
+    "description": "Elixir map"
+  },
+  "custom_component": {
+    "prefix": "component",
+    "body": [
+      "@doc \"\"\"",
+      "  $0",
+      "\"\"\"",
+      "attr :id, :string, default: nil ",
+      "",
+      "def ${TM_FILENAME_BASE/(.*)/${1:/snakecase}/g}(assigns) do ",
+      "  ~H\"\"\" ",
+      "    <div id={@id}>",
+      "      ",
+      "    </div>",
+      "  \"\"\" ",
+      "end "
+    ],
+    "description": "Custom Phoenix Component"
+  },
+  "for_loop": {
+    "prefix": "for",
+    "body": [
+      "for ${1:item} <- @${2:list} do",
+      "  $0 ",
+      "end"
+    ],
+    "description": "Elixir for loop"
+  },
+  "case": {
+    "prefix": "case",
+    "body": [
+      "case ${1:condition} do",
+      "  ${2:match1} -> \"\"",
+      "  ${3:match2} -> \"\"",
+      "  _ -> \"\"",
+      "end"
+    ],
+    "description": "Elixir case expression"
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+      "if ${1:condition} do",
+      "  $0",
+      "end"
+    ],
+    "description": "Elixir if statement"
+  },
+  "ifelse": {
+    "prefix": "if-else",
+    "body": [
+      "if ${1:condition} do",
+      "   $0",
+      "else",
+      "   ",
+      "end"
+    ],
+    "description": "Elixir if-else statement"
+  },
+  "unless": {
+    "prefix": "unless",
+    "body": [
+      "unless ${1:condition} do",
+      "   $0",
+      "end"
+    ],
+    "description": "Elixir unless statement"
+  },
+  "cond": {
+    "prefix": "cond",
+    "body": [
+      "cond do",
+      "   ${1:expression1} -> \"\"",
+      "   ${2:expression2} -> \"\"",
+      "end"
+    ],
+    "description": "Elixir cond statement"
+  },
+  "attr-string": {
+    "prefix": "attr-string",
+    "body": "attr :${1:name}, :string, required: ${2:false}, default: \"${3:default value}\", values: ${4:~w(all values allowed if limited)}",
+    "description": "Creating a string attribute for stateless component"
+  },
+  "attr-integer": {
+    "prefix": "attr-integer",
+    "body": "attr :${1:name}, :integer, required: ${2:false}, default: ${3:1}, values: ${4:[1, 2, 3]}",
+    "description": "Creating a integer attribute for stateless component"
+  },
+  "attr-float": {
+    "prefix": "attr-float",
+    "body": "attr :${1:name}, :float, required: ${2:false}, default: ${3:1.1}, values: ${4:[1.1, 2.2, 3.3]}",
+    "description": "Creating a float attribute for stateless component"
+  },
+  "attr-boolean": {
+    "prefix": "attr-boolean",
+    "body": "attr :${1:name}, :boolean, required: ${2:false}, default: ${3:true/false}, values: [true, false]",
+    "description": "Creating a boolean attribute for stateless component"
+  },
+  "attr-map": {
+    "prefix": "attr-map",
+    "body": "attr :${1:name}, :map, required: ${2:false}, default: %{${3:\"key\"} => ${4:\"value\"}}, values: ${5:[%{\"all\" => \"all\"}}, %{\"values\" => \"values\"}, %{\"allowed\" => \"allowed\"}, %{\"if\" => \"if\"}, %{\"limited\" => \"limited\"}]",
+    "description": "Creating a map attribute for stateless component"
+  },
+  "attr-atom": {
+    "prefix": "attr-atom",
+    "body": "attr :${1:name}, :atom, required: ${2:false}, default: :${3:default_value}, values: ${4:[:all, :values, :allowed, :if, :limited]}",
+    "description": "Creating a atom attribute for stateless component"
+  },
+  "attr-list": {
+    "prefix": "attr-list",
+    "body": "attr :${1:name}, :list, required: ${2:false}, default: [${3:\"default\"}, ${4:\"value\"}]",
+    "description": "Creating a list attribute for stateless component"
+  },
+  "attr-any": {
+    "prefix": "attr-any",
+    "body": "attr :${1:name}, :any, required: ${2:false}",
+    "description": "Creating a any attribute for stateless component"
+  },
+  "ok": {
+    "prefix": "ok",
+    "body": "{:ok, socket}",
+    "description": "Returns {:ok, socket}"
+  },
+  "noreply": {
+    "prefix": "noreply",
+    "body": "{:noreply, socket}",
+    "description": "Returns {:noreply, socket}"
+  },
+  "error": {
+    "prefix": "error",
+    "body": "{:error, reason}",
+    "description": "Returns {:error, reason}"
+  },
+  "socket": {
+    "prefix": "socket",
+    "body": [
+      "socket = ",
+      "   socket ",
+      "   |> $0"
+    ],
+    "description": "Returns socket ready to be operated with"
+  },
+  "assign-multi": {
+    "prefix": ["assign-multi", "multi-assign"],
+    "body": [
+      "socket = ",
+      "   socket ",
+      "   |> assign(${1:key}: ${2:value}) ",
+      "   |> assign(${3:key}: ${4:value})"
+    ],
+    "description": "Assign multiple values to socket"
+  },
+  "docmodule": {
+    "prefix": "docmodule",
+    "body": [
+      "@docmodule \"\"\"",
+      "   ",
+      "\"\"\""
+    ],
+    "description": "Elixir documentation for module"
+  },
+  "doc": {
+    "prefix": "doc",
+    "body": [
+      "@doc \"\"\"",
+      "   ",
+      "\"\"\""
+    ],
+    "description": "Elixir documentation for function"
+  },
+  "verified-routes": {
+    "prefix": ["verified-routes", "routes"],
+    "body": "use ${WORKSPACE_NAME/(.*)/${1:/pascalcase}/g}Web, :verified_routes",
+    "description": "Adds verified routes to the liveview page"
+  },
+  "liveview-js": {
+    "prefix": ["js-liveview", "liveview-js"],
+    "body": "alias Phoenix.LiveView.JS",
+    "description": "Adds Liveview JS to the liveview page"
+  },
+  "on_mount": {
+    "prefix": "on-mount",
+    "body": [
+      "def on_mount(permission, _params, session, socket) do",
+      "   {:cont, socket}",
+      "end"
+    ],
+    "description": "Calls the on_mount function"
+  },
+  "if-connected": {
+    "prefix": ["if-connected", "connected"],
+    "body": "if connected?(socket), do: $0",
+    "description": "Elixir function checking if socket is connected"
+  },
+  "push-navigate": {
+    "prefix": "push-navigate",
+    "body": "push_navigate(socket, to: \"${1:/}\", replace: ${2:false})",
+    "description": "Elixir push_navigate function"
+  },
+  "push-patch": {
+    "prefix": "push-patch",
+    "body": "push_patch(socket, to: \"${1:/}\", replace: ${2:false})",
+    "description": "Elixir push_patch function"
+  },
+  "put-flash": {
+    "prefix": ["put-flash", "flash"],
+    "body": "put_flash(socket, :${1:info}, \"${2:message}\")",
+    "description": "Elixir put_flash function"
+  },
+  "redirect-internal": {
+    "prefix": "redirect-internal",
+    "body": "redirect(socket, to: \"${1:/}\")",
+    "description": "Elixir redirect function with path set to internal one"
+  },
+  "redirect-external": {
+    "prefix": "redirect-external",
+    "body": "redirect(socket, external: \"${1:https://example.com}\")",
+    "description": "Elixir redirect function with path set to external one"
+  },
+  "update": {
+    "prefix": "update",
+    "body": [
+      "def update(assigns, socket) do",
+      "   {:ok, socket}",
+      "end"
+    ],
+    "description": "Elixir update function"
+  },
+  "allow-upload-limited": {
+    "prefix": ["allow-upload-limited", "upload-limited"],
+    "body": "allow_upload(socket, :${1:name}, accept: ~w(${2:.jpg .jpeg}), max_entries: ${3:2})",
+    "description": "Elixir allow_upload function with limitations to file extension and quantity"
+  },
+  "allow-upload-unlimited": {
+    "prefix": ["allow-upload-unlimited", "upload-unlimited"],
+    "body": "allow_upload(socket, :${1:name}, accept: :any)",
+    "description": "Elixir allow_upload function with no limitations to file extension or quantity"
+  }
+}
