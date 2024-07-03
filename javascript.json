@@ -161,5 +161,15 @@
 		"prefix": "arrow-function-js",
 		"body": "const ${1:name} = () => console.log(\"result\")",
 		"description": "JS arrow function"
+	},
+	"json-parse-js": {
+		"prefix": "json-parse-js",
+		"body": "JSON.parse('${1:json_string}')",
+		"description": "Turns a string into a JS object"
+	},
+	"json-stringify-js": {
+		"prefix": "json-parse-js",
+		"body": "JSON.parse('${1:js_object}')",
+		"description": "Turns a JS object into a string"
 	}
 }
