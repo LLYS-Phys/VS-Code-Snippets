@@ -203,5 +203,19 @@
 			"}"
 		],
 		"description": "Supports css at-rule (checks if a property is supported by the browser)"
+	},
+	"nesting-css": {
+		"prefix": "nesting-css",
+		"body": [
+			"${1:.main_selector} {",
+			"    &${2:.same_level_selector} {",
+			"        ",
+			"    }",
+			"    ${3:.child_selector} {",
+			"        ",
+			"    }",
+			"}"
+		],
+		"description": "Nesting CSS"
 	}
 }
