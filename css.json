@@ -1,0 +1,207 @@
+{
+	"keyframes-from-to": {
+		"prefix": "keyframes-from-to-css",
+		"body": [
+			"@keyframes ${1:name} {",
+			"    from {${2:key}: ${3:value}}",
+			"    to {${2:key}: ${4:value}}",
+			"}"
+		],
+		"description": "Keyframes with set \"from\" and \"to\""
+	},
+	"keyframes-0-50-100": {
+		"prefix": "keyframes-0-50-100-css",
+		"body": [
+			"@keyframes ${1:name} {",
+			"    0% {${2:key}: ${3:value}}",
+			"    50% {${2:key}: ${3:value}}",
+			"    100% {${2:key}: ${4:value}}",
+			"}"
+		],
+		"description": "Keyframes with set \"0%\", \"50%\" and \"100%\""
+	},
+	"keyframes-25": {
+		"prefix": "keyframes-25-css",
+		"body": [
+			"@keyframes ${1:name} {",
+			"    0% {${2:key}: ${3:value}}",
+			"    25% {${2:key}: ${3:value}}",
+			"    50% {${2:key}: ${3:value}}",
+			"    75% {${2:key}: ${3:value}}",
+			"    100% {${2:key}: ${4:value}}",
+			"}"
+		],
+		"description": "Keyframes with set \"0%\" through \"100%\" with 25% step"
+	},
+	"keyframes-10": {
+		"prefix": "keyframes-10-css",
+		"body": [
+			"@keyframes ${1:name} {",
+			"    0% {${2:key}: ${3:value}}",
+			"    10% {${2:key}: ${3:value}}",
+			"    20% {${2:key}: ${3:value}}",
+			"    30% {${2:key}: ${3:value}}",
+			"    40% {${2:key}: ${3:value}}",
+			"    50% {${2:key}: ${3:value}}",
+			"    60% {${2:key}: ${3:value}}",
+			"    70% {${2:key}: ${3:value}}",
+			"    80% {${2:key}: ${3:value}}",
+			"    90% {${2:key}: ${3:value}}",
+			"    100% {${2:key}: ${4:value}}",
+			"}"
+		],
+		"description": "Keyframes with set \"0%\" through \"100%\" with 10% step"
+	},
+	"media-query-xs": {
+		"prefix": "media-query-xs-css",
+		"body": [
+			"@media only screen and (max-width: 600px) {",
+			"    $0",
+			"}"
+		],
+		"description": "Media query for extra small devices (phones, 600px and down)"
+	},
+	"media-query-sm": {
+		"prefix": "media-query-sm-css",
+		"body": [
+			"@media only screen and (min-width: 600px) {",
+			"    $0",
+			"}"
+		],
+		"description": "Media query for small devices (portrait tablets and large phones, 600px and up)"
+	},
+	"media-query-md": {
+		"prefix": "media-query-md-css",
+		"body": [
+			"@media only screen and (min-width: 768px) {",
+			"    $0",
+			"}"
+		],
+		"description": "Media query for medium devices (landscape tablets, 768px and up)"
+	},
+	"media-query-lg": {
+		"prefix": "media-query-lg-css",
+		"body": [
+			"@media only screen and (min-width: 992px) {",
+			"    $0",
+			"}"
+		],
+		"description": "Media query for large devices (laptops/desktops, 992px and up)"
+	},
+	"media-query-xlg": {
+		"prefix": "media-query-xlg-css",
+		"body": [
+			"@media only screen and (min-width: 1200px) {",
+			"    $0",
+			"}"
+		],
+		"description": "Media query for extra large devices (laptops/desktops, 1200px and up)"
+	},
+	"media-query-portrait": {
+		"prefix": "media-query-portrait-css",
+		"body": [
+			"@media only screen and (orientation: portrait) {",
+			"    $0",
+			"}"
+		],
+		"description": "Media query for devices with portrait orientation"
+	},
+	"media-query-landscape": {
+		"prefix": "media-query-landscape-css",
+		"body": [
+			"@media only screen and (orientation: landscape) {",
+			"    $0",
+			"}"
+		],
+		"description": "Media query for devices with landscape orientation"
+	},
+	"variable-call-css": {
+		"prefix": "variable-call-css",
+		"body": "var(${1:--var-name})",
+		"description": "Call a css variable"
+	},
+	"variable-call-with-fallback-css": {
+		"prefix": ["variable-call-with-fallback-css", "fallback-variable-call"],
+		"body": "var(${1:--var-name}, ${2:fallback})",
+		"description": "Call a css variable and define a fallback value if the variable is not defined"
+	},
+	"variable-define-css": {
+		"prefix": "variable-define-css",
+		"body": "${1:--var-name}: ${2:value};",
+		"description": "Define a css variable"
+	},
+	"property-css": {
+		"prefix": "property-css",
+		"body": [
+			"@property ${1:--var-name} {",
+			"    syntax: \"${2:<expected-type>}\";",
+			"    inherits: ${3:false};",
+			"    initial-value: ${4:initial-value};",
+			"}"
+		],
+		"description": "!Experimental - Define a css property"
+	},
+	"calc-css": {
+		"prefix": "calc-css",
+		"body": "calc(${1:100%} ${2:-} ${3:100px})",
+		"description": ""
+	},
+	"animation-css": {
+		"prefix": "animation-css",
+		"body": "animation: ${1:name} ${2:duration} ${3:timing-function} ${4:delay} ${5:iteration-count} ${6:direction} ${7:fill-mode} ${8:play-state};",
+		"description": ""
+	},
+	"appearance-css": {
+		"prefix": "appearance-css",
+		"body": [
+			"-webkit-appearance: ${1:value};",
+			"-moz-appearance: ${1:value};",
+			"appearance: ${1:value};"
+		],
+		"description": "The appearance property with added -moz and -webkit for all browsers compabaility"
+	},
+	"import-css": {
+		"prefix": "import-css",
+		"body": "@import url(\"${1:path_to_css_file.css}\");",
+		"description": "Import a style sheet from another sheet"
+	},
+	"container-css": {
+		"prefix": "container-css",
+		"body": [
+			"@container ${1:name} (${2:height > 30rem}) {",
+			"    ",
+			"}"
+		],
+		"description": "Container css at-rule (media query for a block instead of screen)"
+	},
+	"layer-css": {
+		"prefix": "layer-css",
+		"body": [
+			"@layer ${2:second}, ${1:first};",
+			"",
+			"@layer ${1:first} {",
+			"    ${3:.selector}{",
+			"",
+			"    }",
+			"}",
+			"",
+			"@layer ${2:second} {",
+			"    ${3:.selector}{",
+			"",
+			"    }",
+			"}"
+		],
+		"description": "Layer css at-rule (define precedence)"
+	},
+	"supports-css": {
+		"prefix": "supports-css",
+		"body": [
+			"@supports (${1:key}: ${2:value}) {",
+			"    ${3:.selector} {",
+			"        ",
+			"    }",
+			"}"
+		],
+		"description": "Supports css at-rule (checks if a property is supported by the browser)"
+	}
+}
